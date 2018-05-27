@@ -9,7 +9,7 @@ def select_all():
     #connection.close()
     return list(events)
 
-def insert(date, name, description, frequency, amount):
+def input(date, name, description, frequency, amount):
     connection = sqlite3.connect(database)
     cursor = connection.cursor()
     for i in range(0, amount):
@@ -29,7 +29,7 @@ def insert(date, name, description, frequency, amount):
     connection.close()
     return
 
-def delete(id):
+def remove(id):
     connection = sqlite3.connect(database)
     cursor = connection.cursor()
     cursor.execute("DELETE FROM Event WHERE Id = (?)", id)
